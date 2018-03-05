@@ -124,7 +124,7 @@ func (p *HTTPRawComponent) serve(c *gin.Context) {
 	session.WithPayload(payload)
 	session.WithFromTo("", port.GetUrl())
 
-	fbp.SessionWithPort(session, port.GetUrl(), false, port.GetMetadata())
+	fbp.SessionWithPort(session, port.GetGraphName(), port.GetUrl(), port.GetMetadata())
 
 	var ctx context.Context
 	var cancel context.CancelFunc
